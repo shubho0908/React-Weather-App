@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import Body from './Body'
-import animation from './animation.gif'
+import animation from './img/animation.gif'
 
 
 export default function Navbar(props) {

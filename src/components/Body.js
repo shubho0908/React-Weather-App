@@ -1,10 +1,10 @@
 import React from "react";
-import Temp from './temp.png'
-import Feels from './feels.png'
-import Humidity from './humidity.png'
-import Wind from './wind.png'
-import SunRise from './sunrise.png'
-import SunSet from './sunset.png'
+import Temp from './img/temp.png'
+import Feels from './img/feels.png'
+import Humidity from './img/humidity.png'
+import Wind from './img/wind.png'
+import SunRise from './img/sunrise.png'
+import SunSet from './img/sunset.png'
 
 export default function Body(props) {
 
