@@ -12,6 +12,7 @@ export default function Navbar(props) {
     const [wind, setwind] = useState(0)
     const [sunrise, setSunrise] = useState(0)
     const [sunset, setSunset] = useState(0)
+    const [weatherDetails, setweatherDetails] = useState("")
     const [feels, setfeels] = useState(0)
     const [cityName, setcityName] = useState("")
     const [alert, setalert] = useState(false)
@@ -30,6 +31,7 @@ export default function Navbar(props) {
           return;
       }
       else{
+        console.log(parseData);
         setcityName(parseData.name)
         setcountry(parseData.sys.country)
         settemp(parseData.main.temp)
@@ -38,8 +40,8 @@ export default function Navbar(props) {
         sethumidity(parseData.main.humidity)
         setSunrise(parseData.sys.sunrise)
         setSunset(parseData.sys.sunset)
+        setweatherDetails(parseData.weather[0].description)
         setsearch(search+1)
-        console.log(parseData);
       }
     }
 
@@ -74,7 +76,7 @@ export default function Navbar(props) {
         ""
       )}
 
-{search>0?(<Body sunrise={sunrise} sunset={sunset} country={country} wind={wind} humidity={humidity} cityName = {cityName} temp={temp-272.15} city = {city} feels={feels-272.15}/>):<p className='justify-content-center text-center ' style={{fontSize:"25px", display:"flex",justifyContent:"center",alignItems:"center", flexFlow:"column"}}><img id='nothing' style={{height:"350px", width:"350px", textAlign:"center", }} src={animation} alt="" />Nothing to show here!</p>}
+{search>0?(<Body weatherDetails={weatherDetails} sunrise={sunrise} sunset={sunset} country={country} wind={wind} humidity={humidity} cityName = {cityName} temp={temp-272.15} city = {city} feels={feels-272.15}/>):<p className='justify-content-center text-center ' style={{fontSize:"25px", display:"flex",justifyContent:"center",alignItems:"center", flexFlow:"column"}}><img id='nothing' style={{height:"350px", width:"350px", textAlign:"center", }} src={animation} alt="" />Nothing to show here!</p>}
 
   </>
   )
