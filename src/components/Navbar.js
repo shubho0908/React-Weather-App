@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import Body from './Body'
 import animation from './img/animation.gif'
+import Logo from './img/logo.png'
 
 
 export default function Navbar(props) {
@@ -55,7 +56,7 @@ export default function Navbar(props) {
   <>
    <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{borderRadius:"0px"}}>
   <div className="container-fluid">
-    <a className="navbar-brand" href="/">Weather App</a>
+    <a className="navbar-brand" href="/"><img className='mx-2' style={{height:"48px"}} src={Logo} alt="Logo" />Weather App</a>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
