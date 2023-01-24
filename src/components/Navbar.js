@@ -3,6 +3,9 @@ import Body from './Body'
 
 export default function Navbar(props) {
     const [city, setcity] = useState("")
+    const [temp, settemp] = useState(0)
+    const [feels, setfeels] = useState(0)
+    const [cityName, setcityName] = useState("")
 
     const handleChange=(e)=>{
         setcity(e.target.value)
@@ -12,7 +15,9 @@ export default function Navbar(props) {
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${props.apiKey}`
         let data = await fetch(url)
         let parseData = await data.json()
-
+        setcityName(parseData.name)
+        settemp(parseData.main.temp)
+        setfeels(parseData.main.feels_like)
         console.log(parseData);
     }
 
@@ -33,7 +38,7 @@ export default function Navbar(props) {
     </div>
   </div>
 </nav>
-<Body  city = {city}/>
+<Body cityName = {cityName} temp={temp-272.15} city = {city} feels={feels-272.15}/>
 
   </>
   )
