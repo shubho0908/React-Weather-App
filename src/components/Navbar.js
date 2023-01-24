@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Body from './Body'
 
 export default function Navbar(props) {
+    const [search, setsearch] = useState(0)
     const [city, setcity] = useState("")
     const [temp, settemp] = useState(0)
     const [feels, setfeels] = useState(0)
@@ -18,6 +19,7 @@ export default function Navbar(props) {
         setcityName(parseData.name)
         settemp(parseData.main.temp)
         setfeels(parseData.main.feels_like)
+        setsearch(search+1)
         console.log(parseData);
     }
 
@@ -38,7 +40,8 @@ export default function Navbar(props) {
     </div>
   </div>
 </nav>
-<Body cityName = {cityName} temp={temp-272.15} city = {city} feels={feels-272.15}/>
+
+{search>0?(<Body cityName = {cityName} temp={temp-272.15} city = {city} feels={feels-272.15}/>):<p className='justify-content-center text-center my-5' style={{fontSize:"25px"}}>Nothing to show here!</p>}
 
   </>
   )

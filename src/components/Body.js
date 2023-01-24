@@ -14,10 +14,7 @@ export default function Body(props) {
           <div class="card-body">
             <h5 class="card-title">Temp: {temp}°C</h5>
             <h5 class="card-title">Feels Like: {feels}°C</h5>
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
+
           </div>
         </div>
       </div>
