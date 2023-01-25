@@ -32,7 +32,6 @@ export default function Navbar(props) {
           return;
       }
       else{
-        console.log(parseData);
         setcityName(parseData.name)
         setcountry(parseData.sys.country)
         settemp(parseData.main.temp)
